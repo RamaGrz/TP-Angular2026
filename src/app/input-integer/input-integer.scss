@@ -1,0 +1,36 @@
+.contenedor-funcion-agregar {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  gap: 10px;
+}
+
+.sumador-burger {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.operacion{
+  width: 30px;
+  height: 30px;
+  background-color: #e4caa4;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+}
+
+.input-cantidad {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+

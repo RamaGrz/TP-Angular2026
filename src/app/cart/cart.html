@@ -1,0 +1,48 @@
+
+<div class="cart-container" *ngIf="(cartList$ | async)?.length !== 0; else carritoVacio">
+
+  <div class="burger-item" *ngFor="let burger of cartList$ | async">
+
+    <img class="burger-item-image" [src]="burger.imagen" [alt]="burger.nombre">
+        {{ burger.nombre }} - {{ burger.cantidad }}
+        <button class="btn-cart-eliminar" (click)="removeFromCart(burger)">x</button>  
+  </div>  
+    <div class="cart-total">Total: {{ total$ | async | currency:'$':'symbol':'1.0-0' }}</div> 
+    <button 
+      type="button"
+      class="btn-comprar-carrito"
+      (click)="comprarCarrito()"
+      [disabled]="animandoCompra">
+      Comprar
+    </button>
+
+</div>
+
+<ng-template #carritoVacio>
+  <div class="cart-container">
+  🛒 El carrito está vacío
+  </div>
+</ng-template>
+
+<div 
+  class="overlay-compra" 
+  [class.saliendo]="cerrandoAnimacion"
+  *ngIf="animandoCompra">
+
+  <div 
+    class="overlay-compra" 
+    [class.saliendo]="cerrandoAnimacion"
+    *ngIf="animandoCompra">
+
+    <div class="animacion-compra">
+      
+      <div class="circulo-exito">
+        <span class="tilde-exito"></span>
+      </div>
+
+      <h2>¡Pedido confirmado!</h2>
+      <p>Tu compra se agregó correctamente</p>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<h2 class="section-title">Hamburguesas</h2>
+
+<div class="container mt-4">
+  <div class="grid">
+
+    <div class="card-burger" *ngFor="let burger of burgers">
+
+      <div 
+        class="badge-oferta"
+        [ngClass]="{ 'visible': burger.clearance, 'oculto': !burger.clearance }">
+        OFERTA
+      </div>
+
+      <div class="img-container">
+        <img [src]="burger.imagen" [alt]="burger.nombre">
+      </div>
+
+      <div class="info">
+        <h6 class="titulo-burger">{{ burger.nombre }}</h6>
+
+        <p class="precio">
+          {{ burger.precio | currency:'$':'symbol':'1.0-0' }}
+        </p>
+
+        <div class="container-stock" *ngIf="burger.stock === 0">
+          <p class="stock">SIN STOCK</p>
+        </div>
+
+        <p class="descripcion" *ngIf="burger.stock > 0">
+          {{ burger.descripcion }}
+        </p>  
+         <app-input-integer [(cantidad)]="burger.cantidad" [max]="burger.stock" (maxReached)="maxReached($event)" *ngIf="burger.stock > 0"></app-input-integer>
+          <button 
+            class="agregar-al-carrito"
+            [class.compra-exitosa]="burgerAgregada === burger"
+            (click)="addToCart(burger)"
+            [disabled]="burgerAgregada === burger"
+            *ngIf="burger.stock > 0 || burgerAgregada === burger">
+
+            <span *ngIf="burgerAgregada !== burger">
+              Añadir
+            </span>
+
+            <span class="contenido-check" *ngIf="burgerAgregada === burger">
+              <span class="circulo-check">
+                <span class="tilde-check"></span>
+              </span>
+              Agregado
+            </span>
+
+          </button>
+        </div>
+
+    </div>
+
+  </div>
+</div>

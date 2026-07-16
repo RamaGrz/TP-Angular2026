@@ -1,0 +1,7 @@
+ <div class="contenedor-funcion-agregar"  >
+          <div class="sumador-burger">
+                      <button type="button" class="operacion" (click)="restarCantidad()">-</button>
+                      <input class="input-cantidad" [(ngModel)]="cantidad" (keyup)="changeQuantity($event)">
+                      <button type="button" class="operacion" (click)="sumarCantidad()">+</button>
+          </div>
+          </div>

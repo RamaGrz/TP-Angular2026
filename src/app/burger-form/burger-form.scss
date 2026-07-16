@@ -1,0 +1,169 @@
+.crear-burger-section {
+  min-height: calc(100vh - 220px);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.crear-burger-card {
+  width: 100%;
+  max-width: 560px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 34px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+  border-top: 6px solid #ff9b21;
+}
+
+.form-header .tag {
+  display: inline-block;
+  background: #fff1dc;
+  color: #c66a00;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.form-header h2 {
+  margin: 0;
+  font-family: 'Syne', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #1c1c1c;
+}
+
+.form-header p {
+  margin-top: 10px;
+  margin-bottom: 26px;
+  font-family: 'Inter', sans-serif;
+  color: #555;
+  line-height: 1.45;
+}
+
+.burger-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: #222;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  background: #fffaf3;
+}
+
+.form-group textarea {
+  min-height: 95px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff9b21;
+  box-shadow: 0 0 0 4px rgba(255, 155, 33, 0.16);
+  background: #fff;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.check-oferta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.check-oferta input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.btn-enviar-burger {
+  width: 100%;
+  height: 48px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 12px;
+  background: #74e76d;
+  color: #111;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-enviar-burger:hover {
+  background: #58d653;
+  transform: translateY(-2px);
+}
+
+.btn-enviar-burger:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 600px) {
+  .crear-burger-card {
+    padding: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-header h2 {
+    font-size: 28px;
+  }
+}
+
+.mensaje-exito {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #e9ffe8;
+  color: #187d34;
+  font-weight: 800;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  animation: aparecerMensaje 0.3s ease forwards;
+}
+
+@keyframes aparecerMensaje {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

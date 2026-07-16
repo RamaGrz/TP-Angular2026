@@ -1,0 +1,82 @@
+<section class="crear-burger-section">
+
+  <div class="crear-burger-card">
+
+    <div class="form-header">
+      <span class="tag">Nueva propuesta</span>
+      <h2>Creá tu propia Smash</h2>
+      <p>
+        Inventá una hamburguesa, elegí sus ingredientes y mandanos tu idea para sumarla al menú.
+      </p>
+    </div>
+
+    <form [formGroup]="formBurger" class="burger-form" (ngSubmit)="enviarBurger()">
+
+      <div class="form-group">
+        <label for="nombre">Nombre de la burger</label>
+        <input 
+          id="nombre"
+          type="text"
+          formControlName="nombre"
+          placeholder="Ej: La Tandilense">
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea 
+          id="descripcion"
+          formControlName="descripcion"
+          placeholder="Contanos qué ingredientes lleva tu Smash"></textarea>
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label for="precio">Precio sugerido</label>
+          <input 
+            id="precio"
+            type="number"
+            formControlName="precio"
+            placeholder="Ej: 8500">
+        </div>
+
+        <div class="form-group">
+          <label for="stock">Stock inicial</label>
+          <input 
+            id="stock"
+            type="number"
+            formControlName="stock"
+            placeholder="Ej: 10">
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="imagen">Imagen de la burger</label>
+        <input 
+          id="imagen"
+          type="text"
+          formControlName="imagen"
+          placeholder="Pegá la URL de una imagen">
+      </div>
+
+      <label class="check-oferta">
+        <input 
+          type="checkbox"
+          formControlName="clearance">
+        Marcar como burger en oferta
+      </label>
+
+      <button 
+        type="submit" 
+        class="btn-enviar-burger"
+        [disabled]="cargando">
+        {{ cargando ? 'Enviando...' : 'Enviar mi Smash' }}
+      </button>
+
+       <p class="mensaje-exito" *ngIf="enviado">
+        Tu Smash fue enviada correctamente y se sumó al menú.
+       </p>
+    </form>
+  </div>
+</section>

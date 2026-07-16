@@ -1,0 +1,251 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  gap: 20px;
+}
+
+.table,
+.table tbody,
+.table tr,
+.table td {
+  background: transparent !important;
+  border: none;
+}
+
+.card-burger {
+  width: 200px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-burger:hover {
+  transform: translateY(-4px);
+}
+
+.img-container {
+  height: 160px;
+  background: #000;
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  background: #fff;
+  padding: 12px;
+}
+
+.titulo-burger {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.precio {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #6f7d62;
+  margin-top: 6px;
+  -webkit-text-stroke: 0;
+}
+
+.descripcion {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  color: #555;
+  margin-top: 18px;
+  line-height: 1.45;
+  min-height: 70px;
+}
+
+.container-stock {
+  font-size: 12px;
+  margin: 14px auto 0;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: #c53a3a;
+  color: white;
+}
+
+.stock {
+  margin-top: 15px;
+}
+
+.badge-oferta {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #28a745;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.agregar-al-carrito {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  background: #74e76d;
+  border: 1px solid #3fd13a;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.agregar-al-carrito:hover {
+  background: #58d653;
+  transform: translateY(-1px);
+}
+
+.agregar-al-carrito:active {
+  transform: scale(0.96);
+}
+
+.agregar-al-carrito.compra-exitosa {
+  background: #20b15a;
+  border-color: #20b15a;
+  color: white;
+  animation: botonConfirmado 0.45s ease;
+}
+
+.agregar-al-carrito:disabled {
+  cursor: default;
+}
+
+.contenido-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  animation: aparecerContenido 0.25s ease forwards;
+}
+
+.circulo-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: aparecerCirculo 0.35s ease forwards;
+}
+
+.tilde-check {
+  width: 11px;
+  height: 6px;
+  border-left: 3px solid #20b15a;
+  border-bottom: 3px solid #20b15a;
+  transform: rotate(-45deg) scale(0);
+  animation: dibujarTilde 0.25s ease 0.18s forwards;
+}
+
+@keyframes botonConfirmado {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.06);
+  }
+
+  70% {
+    transform: scale(0.97);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes aparecerContenido {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecerCirculo {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes dibujarTilde {
+  from {
+    transform: rotate(-45deg) scale(0);
+  }
+
+  to {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
+.section-title { 
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: 'Syne', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.5px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 330px;
+  height: 3px;
+  background: #ffc107;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.visible {
+  display: block;
+}
+
+.oculto {
+  display: none;
+}
